@@ -1,4 +1,25 @@
-public class BMI{
+import java.awt.*;
+import javax.swing.*;
+import java.swing.border.titleborder;
+
+public class GUI_use_BMI{
+  GUI_use_BMI(){
+    
+  }
+  public static void main(String[] args){
+    JFrame gui = new JFrame();
+    
+    gui.setSize(400, 300);
+    gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
+    
+  }
+  
+  private class buttomlistened()
+
+}
+
+class BMI{
 
   private String name;
   private int age;
