@@ -32,7 +32,7 @@ public class GUI_use_BMI extend JFrame{
     p1.add(jtfBMI);
     p1.add(new JLabel("Status"));
     p1.add(jtfStatus);
-      TitleBorder("Enter name, age, weight, and height")
+      TitleBorder("Enter name, age, weight (in pounds), and height(in inches)")
     
     //Panel p2 to hold the button
     JPanel p2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -43,21 +43,38 @@ public class GUI_use_BMI extend JFrame{
     add(p2, BorderLayout.SOUTH);
     
     //Register listener
-    jb
-    
+    jbtComputeBMI.addActionListener(new ButtonListener());
   }
+  
+  //Hanndle the Compute BMI button
+  private class ButtonListener implments ActionListener(
+    @Override
+    public void actionPerformed(ActionEvent k){
+      //Get values from text fields
+      String name = String.parseString(jtfName.getText());
+      int age = Integer.parseInt(jtfAge.getText());
+      double weight = Double.parseString(jtfWeight.getText());
+      double height = Double.parseString(jtfHeight.getText());
+      
+      //Create a BMI object
+      BMI bmi = new BMI(name, age, weight, height);
+      
+      //Display BMI, and status
+      jtfBMI.setText(String.format("%.1f", bmi.getBMI());
+      jtfStatus.setText(String.format(bmi.getStatus());
+    }
+  )
   
   public static void main(String[] args){
-    JFrame gui = new JFrame();
-    
+    GUI_use_BMI gui = new GUI_use_BMI();
+    gui.pack();
     gui.setSize(400, 300);
+    gui.setTitle("GUI_use_BMI);
+    //put the frame in center
+    gui.setLocationRelativeTo(null);
     gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    
-    
+    gui.setVisible(true);
   }
-  
-  private class buttomlistened()
-
 }
 
 class BMI{
