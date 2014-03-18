@@ -1,11 +1,52 @@
 import java.awt.*;
+import java.awt.event.*
 import javax.swing.*;
 import java.swing.border.titleborder;
 
-public class GUI_use_BMI{
-  GUI_use_BMI(){
+public class GUI_use_BMI extend JFrame{
+  
+  //Create text fields for name, age, weight, height
+  
+  private JTextField jtfName = new JTextField();
+  private JTextField jtAge = new JTextField();
+  private JTextField jtfWeight = new JTextField();
+  private JTextField jtfHeight = new JTextField();
+  private JTextField jtfBMI = new JTextField();
+  private JTextField jtfStatus = new JTextField();
+  
+  //Create a Compute BMi button
+  privateJButton jbtComputeBMI = new JButton("Compute BMI")
+  
+  public GUI_use_BMI(){
+    //Panel p1 to hold labels and text fields
+    JPanel p1 = new JPanel(new GridLayout(6,2));
+    p1.add(new JLabel("Name"));
+    p1.add(jtfName);
+    p1.add(new JLabel("Age"));
+    p1.add(jtfAge);
+    p1.add(new JLabel("Weight"));
+    p1.add(jtfWeight);
+    p1.add(new JLabel("Height"));
+    p1.add(jtfHeight);
+    p1.add(new JLabel("BMI"));
+    p1.add(jtfBMI);
+    p1.add(new JLabel("Status"));
+    p1.add(jtfStatus);
+      TitleBorder("Enter name, age, weight, and height")
+    
+    //Panel p2 to hold the button
+    JPanel p2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+    p2.add(jbtCompute);
+    
+    //Add the panels to the frame
+    add(p1, BorderLayout.CENTER);
+    add(p2, BorderLayout.SOUTH);
+    
+    //Register listener
+    jb
     
   }
+  
   public static void main(String[] args){
     JFrame gui = new JFrame();
     
